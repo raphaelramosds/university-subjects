@@ -1,8 +1,7 @@
 # Dependências
 
 ```
-yarn add sequelize mysql2 -D
-yarn add typescript ts-node-dev @types/express dotenv -D
+yarn add sequelize mysql2 typescript ts-node-dev @types/express dotenv -D
 yarn add express
 ```
 
