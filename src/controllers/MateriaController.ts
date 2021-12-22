@@ -42,7 +42,17 @@ class MateriaController {
         });
     }
 
-    async destroy(req: Request, res: Response) { }
+    async destroy(req: Request, res: Response) {
+        const { materiaId } = req.params;
+        const materia = await MateriaModel.destroy({
+            where: {
+                id: materiaId
+            }
+        });
+        return res.status(200).json({
+            status: "Deletado com sucesso"
+        });
+    }
 }
 
 // exportar uma instancia do controller
