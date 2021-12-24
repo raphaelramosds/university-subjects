@@ -1,10 +1,3 @@
-# Dependências
-
-```
-yarn add sequelize mysql2 typescript ts-node-dev @types/express dotenv -D
-yarn add express
-```
-
 # Códigos HTTP utilizados
 
 - `200` sucesso
