@@ -1,14 +1,14 @@
 import express from 'express';
-import MateriaController from './controllers/MateriaController';
+import SubjectController from './controllers/SubjectController';
 
 export const router = express.Router();
 
 // c
-router.post('/materias', MateriaController.create);
+router.post('/subjects', SubjectController.create);
 // r
-router.get('/materias', MateriaController.findAll);
-router.get('/materias/:materiaId', MateriaController.findOne);
+router.get('/subjects', SubjectController.findAll);
+router.get('/subjects/:subjectId', SubjectController.findOne);
 // u
-router.put('/materias/:materiaId', MateriaController.update);
+router.put('/subjects/:subjectId', SubjectController.update);
 // d
-router.delete('/materias/:materiaId', MateriaController.destroy);
+router.delete('/subjects/:subjectId', SubjectController.destroy);

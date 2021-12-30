@@ -1,13 +1,13 @@
 import { DataTypes } from 'sequelize';
 import { db } from '../db';
 
-export const MateriaModel = db.define("materia", {
+export const SubjectModel = db.define("subject", {
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
+        type: DataTypes.STRING,
+        autoIncrement: false,
         primaryKey: true
     }, 
-    nome: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -15,7 +15,7 @@ export const MateriaModel = db.define("materia", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    obrigatoria: {
+    mandatory: {
         type: DataTypes.BOOLEAN,
         allowNull: false
     }
