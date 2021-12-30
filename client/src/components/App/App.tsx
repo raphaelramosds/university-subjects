@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { api } from "./services/api";
+import { api } from "../../services/api";
+import DisplaySubjects from "../Subjects/DisplaySubject/DisplaySubjects";
 
 const App = () => {
 
@@ -7,13 +8,14 @@ const App = () => {
 
   useEffect(() => {
     api.get('/subjects').then((response) => {
-      console.log(response);
-      // setSubjects(response.data);
+      setSubjects(response.data);
     });
-  }, []);
+  }, [subjects]);
 
   return (
-    <h1>My Subjects</h1>
+    <>
+      <DisplaySubjects subjects={subjects} />
+    </>
   );
 }
 
