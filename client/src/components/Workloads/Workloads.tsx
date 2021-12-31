@@ -1,7 +1,7 @@
 const Workloads = () => {
     return (
         <>
-        
+            
         </>
     );
 }
