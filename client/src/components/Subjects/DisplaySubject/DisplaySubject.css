@@ -1,0 +1,34 @@
+.subjectsList li {
+    list-style-type: none;
+    transition: all 0.5s;
+}
+
+.subjectsList {
+    width: 25em;
+    padding: 0;
+    box-shadow: 5px 5px 5px lightgray;
+    border-radius: 1em;
+}
+
+.subjectsList .subject li:hover {
+    background-color: #EBEFE7;
+}
+
+.subjectsList .info {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subjectsList .ch, .name, .icon{
+    padding: 1em;
+}
+
+.subjectsList .ch {
+    color:#0065FF;
+    font-weight: 500;
+}
+
+.subjectsList .icon {
+    color: #0065FF;
+}

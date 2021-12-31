@@ -1,0 +1,25 @@
+input {
+    padding: 1em;
+    border: 1px solid #F5FBEF;
+    border-bottom: 1.5px solid #0065FF;
+    border-radius: 0.25em;
+
+    transition: 1s all;
+}
+
+.subjectsForm div:nth-child(2) input {
+    width: 3em;
+}
+
+.subjectsForm {
+    display: flex;
+}
+
+.subjectsForm div {
+    margin-left: .5em;
+}
+
+.subjectsForm div:nth-child(3) {
+
+    text-align: center; 
+}

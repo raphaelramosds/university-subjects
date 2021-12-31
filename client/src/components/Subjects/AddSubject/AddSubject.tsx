@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './AddSubject.css';
 
 interface Props {
     updateSubject: any
@@ -29,21 +30,35 @@ const AddSubject: React.FC<Props> = ({ updateSubject }) => {
 
     return (
         <>
-            <form onSubmit={handleSubmitSubject}>
-                <input placeholder="Matéria"
-                    name="name"
-                    type="text"
-                    onChange={handleTypedInfo} />
-                <input placeholder="Carga Horária"
-                    name="ch"
-                    type="number"
-                    onChange={handleTypedInfo} />
-                Obrigatoria?
-                <input type="checkbox"
-                    name="mandatory"
-                    onChange={handleTypedInfo}
-                />
-                <input type="submit" style={{display: "none"}}/>
+            <form onSubmit={handleSubmitSubject} className="subjectsForm">
+                <div>
+                    <input
+                        placeholder="Matéria"
+                        name="name"
+                        type="text"
+                        onChange={handleTypedInfo} />
+                </div>
+                <div>
+                    <input
+                        placeholder="CH"
+                        name="ch"
+                        type="number"
+                        onChange={handleTypedInfo} />
+                </div>
+                <div>
+                    <small>
+                    Obrigatória?
+                    </small>  
+                    <div>
+                        <input type="checkbox"
+                            name="mandatory"
+                            onChange={handleTypedInfo}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" style={{ display: "none" }} />
+                </div>
             </form>
 
         </>
