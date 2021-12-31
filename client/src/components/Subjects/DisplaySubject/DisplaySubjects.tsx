@@ -18,26 +18,27 @@ const DisplaySubjects: React.FC<Props> = ({ subjects }) => {
 
     return (
         <>
-            <ul className="subjectsList">
-                {subjects.map((subject) => (
-                    <div className="subject">
-                        <li key={subject.id}
-                            onClick={() => handleDeleteSubject(subject.id)}>
-                            <div className="info">
-                                <div className="icon">
-                                    <FontAwesomeIcon icon={faCircleNotch} />
+                {subjects.length > 0 ?
+                <ul className="subjectsList">
+                    {subjects.map((subject) => (
+                        <div className="subject">
+                            <li key={subject.id}
+                                onClick={() => handleDeleteSubject(subject.id)}>
+                                <div className="info">
+                                    <div className="icon">
+                                        <FontAwesomeIcon icon={faCircleNotch} />
+                                    </div>
+                                    <div className="name">
+                                        {subject.name}
+                                    </div>
+                                    <div className="ch">
+                                        {subject.ch}h
+                                    </div>
                                 </div>
-                                <div className="name">
-                                    {subject.name}
-                                </div>
-                                <div className="ch">
-                                    {subject.ch}h
-                                </div>
-                            </div>
-                        </li>
-                    </div>
-                ))}
-            </ul>
+                            </li>
+                        </div>
+                    ))}
+                </ul> : <small style={{marginTop: 30}}>Nenhuma matéria cadastrada</small> }
         </>
     );
 }

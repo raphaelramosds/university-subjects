@@ -4,6 +4,9 @@
 }
 
 .subjectsList {
+    overflow: auto;
+    /* seja flexível até 350px */
+    max-height: 350px;
     width: 25em;
     padding: 0;
     box-shadow: 5px 5px 5px lightgray;

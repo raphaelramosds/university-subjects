@@ -2,7 +2,6 @@ input {
     padding: 1em;
     border: 1px solid #F5FBEF;
     border-bottom: 1.5px solid #0065FF;
-    border-radius: 0.25em;
 
     transition: 1s all;
 }
