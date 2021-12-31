@@ -1,5 +1,7 @@
 # Subjects SPA's
 
+SPA that allows me to manage my university subjects by means of a CRUD coded with ExpressJS + Sequelize.
+
 ![SPA image](./image.PNG)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -15,6 +17,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # HTTP's code
 
-- `200` sucesso
-- `201` cadastrado com sucesso
-- `204` sem dados
+- `200` success
+- `201` created
+- `204` no data
