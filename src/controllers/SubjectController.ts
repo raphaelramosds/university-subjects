@@ -23,12 +23,20 @@ class subjectController {
 
         async create(req: Request, res: Response) {
             const { name, ch, mandatory } = req.body;
+
+            if (!name || !ch) {
+                return res.json({
+                    error: "O nome e a CH devem ser informados",
+                })
+            }
+
             const subject = await SubjectModel.create({
                 id: uuid(),
                 name,
                 ch,
                 mandatory
             });
+
             return res.status(201).json(subject); // retorne 201 e a subject cadastrada
         }
 

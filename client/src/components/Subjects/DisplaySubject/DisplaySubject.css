@@ -4,9 +4,11 @@
 }
 
 .subjectsList {
-    overflow: auto;
+
     /* seja flexível até 350px */
+    overflow: auto;
     max-height: 350px;
+
     width: 25em;
     padding: 0;
     box-shadow: 5px 5px 5px lightgray;
@@ -25,6 +27,11 @@
 
 .subjectsList .ch, .name, .icon{
     padding: 1em;
+}
+
+.subjectsList .name {
+    text-align: left;
+    flex: 1;
 }
 
 .subjectsList .ch {

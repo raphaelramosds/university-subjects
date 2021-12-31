@@ -25,9 +25,14 @@ const App = () => {
   }, []);
 
   const handleUpdateSubjects = async (subject: Subject) => {
-    setSubjects((prevs) => [...prevs, subject]);
     const response = await api.post('/subjects', subject);
-    console.log(response);
+  
+    if (response.data.error) {
+      alert(response.data.error);
+      return;
+    }
+
+    setSubjects((prevs) => [...prevs, subject]);
   }
 
   return (
