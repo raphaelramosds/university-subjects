@@ -1,4 +1,4 @@
-import React, { ReactComponentElement, useEffect, useState } from "react";
+import React, { ReactComponentElement, useCallback, useEffect, useState } from "react";
 import { api } from "../../services/api";
 import AddSubject from "../Subjects/AddSubject/AddSubject";
 import DisplaySubjects from "../Subjects/DisplaySubject/DisplaySubjects";
@@ -18,22 +18,22 @@ const App = () => {
   const [subjects, setSubjects] = useState<Array<Subject>>([]);
 
   // update state
-  useEffect(() => {
+  const handleUpdateSubjects = async (subject: Subject) => {
+    const response = await api.post('/subjects', subject);
+
+    if (response.data.error) {
+      alert(response.data.error);
+      return;
+    }
+    setSubjects((prevs) => [...prevs, subject]);
+  }
+
+  useEffect(() => {    
     api.get('/subjects').then((response) => {
       setSubjects(response.data);
     });
   }, []);
 
-  const handleUpdateSubjects = async (subject: Subject) => {
-    const response = await api.post('/subjects', subject);
-  
-    if (response.data.error) {
-      alert(response.data.error);
-      return;
-    }
-
-    setSubjects((prevs) => [...prevs, subject]);
-  }
 
   return (
     <>

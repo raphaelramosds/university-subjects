@@ -16,7 +16,7 @@ const AddSubject: React.FC<Props> = ({ updateSubject }) => {
     const handleTypedInfo = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { target } = event;
         const { name, value, type } = target;
-        // se for checkbox, atribua true (obrigatorio) ou false (optativa   )
+        // se for checkbox, atribua true (obrigatorio) ou false (optativa)
         const correctedValue = type === 'checkbox' ? target.checked : value;
 
         setNewSubject((prev) => ({ ...prev, [name]: correctedValue }));

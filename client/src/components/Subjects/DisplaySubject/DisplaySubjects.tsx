@@ -18,7 +18,7 @@ const DisplaySubjects: React.FC<Props> = ({ subjects }) => {
 
     return (
         <>
-                {subjects.length > 0 ?
+            {subjects.length > 0 ?
                 <ul className="subjectsList">
                     {subjects.map((subject) => (
                         <div className="subject">
@@ -38,7 +38,8 @@ const DisplaySubjects: React.FC<Props> = ({ subjects }) => {
                             </li>
                         </div>
                     ))}
-                </ul> : <small style={{marginTop: 30}}>Nenhuma matéria cadastrada</small> }
+                </ul> : <small style={{ marginTop: 30 }}>Nenhuma matéria cadastrada</small>
+            }
         </>
     );
 }

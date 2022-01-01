@@ -4,7 +4,6 @@
 }
 
 .subjectsList {
-
     /* seja flexível até 350px */
     overflow: auto;
     max-height: 350px;
@@ -12,7 +11,7 @@
     width: 25em;
     padding: 0;
     box-shadow: 5px 5px 5px lightgray;
-    border-radius: 1em;
+    border-radius: 0.25em;
 }
 
 .subjectsList .subject li:hover {
