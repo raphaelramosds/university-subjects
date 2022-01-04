@@ -23,3 +23,8 @@
     color: #252525
 }
 
+.errorMessage {
+    color: crimson;
+    text-align: center;
+    font-size: x-small;
+}

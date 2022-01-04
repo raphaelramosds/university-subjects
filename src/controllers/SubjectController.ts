@@ -61,6 +61,15 @@ class subjectController {
             status: "Deletado com sucesso"
         });
     }
+
+    // Outros metodos
+    async sumWorkload(req: Request, res: Response) {
+        const total = await SubjectModel.sum("ch");
+        console.log(total);
+        return res.status(200).json({
+            sum: total
+        });
+    }
 }
 
 // exportar uma instancia do controller

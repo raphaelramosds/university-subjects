@@ -4,7 +4,7 @@ import AddSubject from "../Subjects/AddSubject/AddSubject";
 import DisplaySubjects from "../Subjects/DisplaySubject/DisplaySubjects";
 import Workloads from "../Workloads/Workloads";
 
-import './App.css';
+import "./App.css";
 
 export interface Subject {
   id: string,
@@ -18,15 +18,19 @@ const App = () => {
   // declaração de estado
   const [subjects, setSubjects] = useState<Array<Subject>>([]);
 
+  // errors
+  const [err, setErr] = useState("");
+
   // update list
   const handleUpdateSubjects = async (subject: Subject) => {
-    const response = await api.post('/subjects', subject);
-
-    // console.log(response);
-
-    subject.id = response.data.id;
-
-    setSubjects((prevs) => [...prevs, subject]);
+    // const response = await api.post("/subjects", subject);
+    try {
+      const response = await api.post("/subjects", subject)
+      subject.id = response.data.id;
+      setSubjects((prevs) => [...prevs, subject]);
+    } catch(error) {
+      setErr("Preencha o(s) campo(s) vazio(s)");
+    }
   }
 
   // delete
@@ -38,7 +42,7 @@ const App = () => {
   }
 
   useEffect(() => {    
-    api.get('/subjects').then((response) => {
+    api.get("/subjects").then((response) => {
       setSubjects(response.data);
     });
   }, []);
@@ -51,10 +55,11 @@ const App = () => {
           <p>UFRN</p>
         </div>
       </div>
+      {err && <div className="errorMessage">{err}</div>}
       <div className="container">
         <AddSubject updateSubject={handleUpdateSubjects}/>
-        <DisplaySubjects subjects={subjects} deleteSubject={handleDeleteSubjects}/>
         <Workloads />
+        <DisplaySubjects subjects={subjects} deleteSubject={handleDeleteSubjects}/>
       </div>
     </>
   );
