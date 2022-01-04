@@ -7,6 +7,7 @@ import Workloads from "../Workloads/Workloads";
 import './App.css';
 
 export interface Subject {
+  id: string,
   name: string,
   ch: number,
   mandatory: boolean,
@@ -17,15 +18,23 @@ const App = () => {
   // declaração de estado
   const [subjects, setSubjects] = useState<Array<Subject>>([]);
 
-  // update state
+  // update list
   const handleUpdateSubjects = async (subject: Subject) => {
     const response = await api.post('/subjects', subject);
 
-    if (response.data.error) {
-      alert(response.data.error);
-      return;
-    }
+    // console.log(response);
+
+    subject.id = response.data.id;
+
     setSubjects((prevs) => [...prevs, subject]);
+  }
+
+  // delete
+  const handleDeleteSubjects = (id: string) => {
+    console.log(id);
+
+    const filteredSubjects = subjects.filter((subject) => subject.id !== id);
+    setSubjects(filteredSubjects);
   }
 
   useEffect(() => {    
@@ -33,7 +42,6 @@ const App = () => {
       setSubjects(response.data);
     });
   }, []);
-
 
   return (
     <>
@@ -44,8 +52,8 @@ const App = () => {
         </div>
       </div>
       <div className="container">
-        <AddSubject updateSubject={handleUpdateSubjects} />
-        <DisplaySubjects subjects={subjects} />
+        <AddSubject updateSubject={handleUpdateSubjects}/>
+        <DisplaySubjects subjects={subjects} deleteSubject={handleDeleteSubjects}/>
         <Workloads />
       </div>
     </>

@@ -5,10 +5,10 @@ export const router = express.Router();
 
 // c
 router.post('/subjects', SubjectController.create);
-// r
+// R
 router.get('/subjects', SubjectController.findAll);
 router.get('/subjects/:subjectId', SubjectController.findOne);
-// u
+// U
 router.put('/subjects/:subjectId', SubjectController.update);
-// d
+// D
 router.delete('/subjects/:subjectId', SubjectController.destroy);

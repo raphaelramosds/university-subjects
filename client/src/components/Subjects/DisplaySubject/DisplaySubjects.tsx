@@ -6,14 +6,15 @@ import { api } from "../../../services/api";
 import './DisplaySubject.css';
 
 interface Props {
-    subjects: Array<any>
+    subjects: Array<any>,
+    deleteSubject: any
 }
 
-const DisplaySubjects: React.FC<Props> = ({ subjects }) => {
+const DisplaySubjects: React.FC<Props> = ({ subjects, deleteSubject }) => {
 
-    const handleDeleteSubject = (id: string): React.MouseEvent<HTMLElement> | void => {
-        console.log(id);
+    const handleDeleteSubject = (id: string): React.MouseEvent<HTMLElement> | void  => {
         api.delete(`/subjects/${id}`);
+        deleteSubject(id);
     }
 
     return (
