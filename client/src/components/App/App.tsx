@@ -21,9 +21,8 @@ const App = () => {
   // errors
   const [err, setErr] = useState("");
 
-  // update list
-  const handleUpdateSubjects = async (subject: Subject) => {
-    // const response = await api.post("/subjects", subject);
+  // add subject
+  const handleCreateSubject = async (subject: Subject) => {
     try {
       const response = await api.post("/subjects", subject)
       subject.id = response.data.id;
@@ -35,6 +34,7 @@ const App = () => {
 
   // delete
   const handleDeleteSubjects = (id: string) => {
+
     console.log(id);
 
     const filteredSubjects = subjects.filter((subject) => subject.id !== id);
@@ -57,7 +57,7 @@ const App = () => {
       </div>
       {err && <div className="errorMessage">{err}</div>}
       <div className="container">
-        <AddSubject updateSubject={handleUpdateSubjects}/>
+        <AddSubject createSubject={handleCreateSubject}/>
         <Workloads />
         <DisplaySubjects subjects={subjects} deleteSubject={handleDeleteSubjects}/>
       </div>

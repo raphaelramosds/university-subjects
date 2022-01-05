@@ -3,6 +3,9 @@ import { SubjectModel } from '../database/models/SubjectModel';
 import { v4 as uuid } from 'uuid';
 
 class subjectController {
+
+    // CRUD
+
     async findAll(req: Request, res: Response) {
         const subjects = await SubjectModel.findAll();
         return !subjects
@@ -63,9 +66,8 @@ class subjectController {
     }
 
     // Outros metodos
-    async sumWorkload(req: Request, res: Response) {
+    async sumWorkloads(req: Request, res: Response) {
         const total = await SubjectModel.sum("ch");
-        console.log(total);
         return res.status(200).json({
             sum: total
         });

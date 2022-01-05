@@ -1,4 +1,7 @@
-input {
+.subjectsForm {
+    display: flex;
+}
+.subjectsForm input[type="text"], input[type="number"] {
     padding: 1em;
     border: 1px solid #F5FBEF;
     border-bottom: 1.5px solid #0065FF;
@@ -6,19 +9,64 @@ input {
     transition: 1s all;
 }
 
-.subjectsForm div:nth-child(2) input {
+.subjectsForm input:focus {
+    outline: none;
+}
+
+.subjectsForm input[type="number"] {
     width: 3em;
 }
 
-.subjectsForm {
-    display: flex;
-}
 
 .subjectsForm div {
-    margin-left: .5em;
+    margin-left: 1.5em;
 }
 
 .subjectsForm div:nth-child(3) {
-
     text-align: center; 
+}
+
+.mandatory {
+    display: flex;
+    flex-direction: column;
+}
+
+.mandatory span {
+    font-size: xx-small;
+}
+
+/* Toggle Button */
+
+.mandatory input {
+	position: relative;
+	width: 40px;
+	height: 20px;
+	-webkit-appearance: none;
+	background: #c6c6c6;
+	outline: none;
+	border-radius:20px;
+	transition: .5s;
+	/* box-shadow: inset 0 0 5px rgba(0,0,.1); */
+}
+
+.mandatory input:checked {
+	background: #0065FF;
+}
+
+.mandatory input:before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	top: 0;
+	left: 0;
+	background: #fff;
+	transform: scale(1.1);
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	transition: .5s;
+}
+
+.mandatory input:checked:before {
+	left: 20px;
 }

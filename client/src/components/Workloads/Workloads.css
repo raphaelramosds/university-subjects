@@ -1,8 +1,14 @@
 .totalWorkloads {
 
-    width: 22em;
-    padding: 1em;
-    /* background-color: lightslategrey; */
-
+    display: flex;
     text-align: left;
+
+    width: 27em;
+    font-size: small;
+    padding: 1em;
+
+}
+
+.totalWorkloads .total {
+    flex: 1;
 }

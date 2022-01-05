@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import './AddSubject.css';
 
 interface Props {
-    updateSubject: any
+    createSubject: any
 }
 
-const AddSubject: React.FC<Props> = ({ updateSubject }) => {
+const AddSubject: React.FC<Props> = ({ createSubject }) => {
 
     const [newSubject, setNewSubject] = useState({
-        subject: '',
-        ch: '',
+        subject: "",
+        ch: "",
         mandatory: false
     });
 
@@ -17,7 +17,7 @@ const AddSubject: React.FC<Props> = ({ updateSubject }) => {
         const { target } = event;
         const { name, value, type } = target;
         // se for checkbox, atribua true (obrigatorio) ou false (optativa)
-        const correctedValue = type === 'checkbox' ? target.checked : value;
+        const correctedValue = type === "checkbox" ? target.checked : value;
 
         setNewSubject((prev) => ({ ...prev, [name]: correctedValue }));
     }
@@ -25,7 +25,7 @@ const AddSubject: React.FC<Props> = ({ updateSubject }) => {
     // submete
     const handleSubmitSubject = (event: React.SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
-        updateSubject(newSubject);
+        createSubject(newSubject);
     }
 
     return (
@@ -45,16 +45,13 @@ const AddSubject: React.FC<Props> = ({ updateSubject }) => {
                         type="number"
                         onChange={handleTypedInfo} />
                 </div>
-                <div>
-                    <small>
-                    Obrigatória?
-                    </small>  
-                    <div>
-                        <input type="checkbox"
-                            name="mandatory"
-                            onChange={handleTypedInfo}
-                        />
-                    </div>
+                <div className="mandatory">
+                    <span>Obrigatória</span>
+                    <input 
+                        type="checkbox"
+                        name="mandatory"
+                        onChange={handleTypedInfo}
+                    />
                 </div>
                 <div>
                     <input type="submit" style={{ display: "none" }} />

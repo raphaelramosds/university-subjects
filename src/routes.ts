@@ -8,9 +8,8 @@ router.post('/subjects', SubjectController.create);
 // R
 router.get('/subjects', SubjectController.findAll);
 router.get('/subjects/:subjectId', SubjectController.findOne);
+router.get('/subjects/workloads/sum', SubjectController.sumWorkloads);
 // U
 router.put('/subjects/:subjectId', SubjectController.update);
 // D
 router.delete('/subjects/:subjectId', SubjectController.destroy);
-// Total
-router.get('/subjects/workload', SubjectController.sumWorkload);
