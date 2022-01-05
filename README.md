@@ -8,12 +8,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+On the root directory, start the server
 
-### `yarn start`
+```bash
+yarn dev
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then, on `client` folder, you can type
+
+```bash
+yarn start
+```
+
+For starting React application. Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # HTTP's code
 
