@@ -3,7 +3,7 @@
 SPA that allows me to manage my university subjects by means of a CRUD coded with ExpressJS + Sequelize.
 
 - Click the subject to delete it from the list
-- Type subject's name onto the field and press `entter` to add it
+- Type subject's name onto the field and press `enter` to add it
 
 ![SPA image](./image.PNG)
 
