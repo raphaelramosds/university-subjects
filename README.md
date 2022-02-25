@@ -27,6 +27,8 @@ For starting React application. Runs the app in the development mode. Open [http
 
 # HTTP's code
 
-`200` success
-`201` created
-`204` no data
+> **200** success
+
+> **201** created
+
+> **204** no data
