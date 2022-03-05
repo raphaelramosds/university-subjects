@@ -18,7 +18,7 @@ On the root directory, start the server
 yarn dev
 ```
 
-Then, on `client` folder, you can type
+Then, on *client* folder, you can type
 
 ```bash
 yarn start
