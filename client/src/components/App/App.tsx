@@ -27,10 +27,11 @@ const App = () => {
       const response = await api.post("/subjects", subject)
       subject.id = response.data.id;
       setSubjects((prevs) => [...prevs, subject]);
-    } catch(error) {
-      setErr("Preencha o(s) campo(s) vazio(s)");
+    } catch(e) {
+      setErr(e.response.data.error);
     }
   }
+  
 
   // delete
   const handleDeleteSubjects = (id: string) => {
