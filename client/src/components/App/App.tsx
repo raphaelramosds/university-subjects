@@ -1,4 +1,4 @@
-import React, { ReactComponentElement, useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import AddSubject from "../Subjects/AddSubject/AddSubject";
 import DisplaySubjects from "../Subjects/DisplaySubject/DisplaySubjects";
@@ -34,9 +34,6 @@ const App = () => {
 
   // delete
   const handleDeleteSubjects = (id: string) => {
-
-    console.log(id);
-
     const filteredSubjects = subjects.filter((subject) => subject.id !== id);
     setSubjects(filteredSubjects);
   }

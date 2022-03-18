@@ -1,15 +1,13 @@
 import express from 'express';
-import SubjectController from './controllers/SubjectController';
+
+import CreateSubjectController from './controllers/CreateSubjectController';
+import ListSubjectController from './controllers/ListSubjectController';
+import DestroySubjectController from './controllers/DestroySubjectController';
+import FetchSumWorkloads from './controllers/FetchSumWorkloads';
 
 export const router = express.Router();
 
-// C
-router.post('/subjects', SubjectController.create);
-// R
-router.get('/subjects', SubjectController.findAll);
-router.get('/subjects/:subjectId', SubjectController.findOne);
-router.get('/subjects/workloads/sum', SubjectController.sumWorkloads);
-// U
-router.put('/subjects/:subjectId', SubjectController.update);
-// D
-router.delete('/subjects/:subjectId', SubjectController.destroy);
+router.post('/subjects', CreateSubjectController.handle);
+router.get('/subjects', ListSubjectController.handle);
+router.get('/subjects/workloads/sum', FetchSumWorkloads.handle);
+router.delete('/subjects/:subjectId', DestroySubjectController.handle);
